@@ -22,5 +22,22 @@ catchup=False, # run/not run missed intervals
 tags=['Team A'], # to categorize and filter dags in UI
 )
 ```
+### Defining Tasks
+```
+# Establishing connection
+conn = psycopg2.connect(database = "adventure_works", 
+                        user = "postgres", 
+                        host= 'localhost',
+                        password = "p@ssword",
+                        port = 5432)
+cursor = conn.cursor()
+cursor.execute("""SELECT * FROM customer;""")
+rows = cursor.fetchall()
+conn.commit()
+conn.close()
 
+customers = []
+for row in rows:
+    customers.append(row)
+```
 [.pycode ETL code](etl.py)
