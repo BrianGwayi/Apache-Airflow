@@ -22,6 +22,9 @@ tags=['Team A'], # to categorize and filter dags in UI
 ```
 ### Defining Tasks
 ```
+@task()
+def get_customers():
+
 # Establishing connection
 conn = psycopg2.connect(database = "adventure_works", 
                         user = "postgres", 
