@@ -1,5 +1,4 @@
 # Big Impact Project
-# Project 1 - Apache-Airflow
 
 ![Banner](assets/imgs/afbanner.png)
 
