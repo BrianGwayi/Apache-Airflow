@@ -58,3 +58,9 @@ product_df = pd.read_sql("SELECT * FROM products", conn)
 
 ```
 [.pycode ETL code](etl.py)
+
+# Running the DAG
+```
+airflow webserver -p 8080
+airflow scheduler
+```
