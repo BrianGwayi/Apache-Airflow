@@ -24,6 +24,7 @@ tags=['Team A'], # to categorize and filter dags in UI
 )
 ```
 ### Defining Tasks
+### *Get Customers*
 ```
 @task()
 def get_customers():
@@ -43,5 +44,17 @@ conn.close()
 customers = []
 for row in rows:
     customers.append(row)
+```
+### *Get Products*
+```
+@task()
+def get_products():
+conn = psycopg2.connect(database = "adventure_works", 
+                        user = "postgres", 
+                        host= 'localhost',
+                        password = "p@ssword",
+                        port = 5432)
+product_df = pd.read_sql("SELECT * FROM products", conn)
+
 ```
 [.pycode ETL code](etl.py)
