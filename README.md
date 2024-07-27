@@ -44,6 +44,7 @@ conn.close()
 customers = []
 for row in rows:
     customers.append(row)
+print(customers[:5])
 ```
 *Get Products*
 ```
