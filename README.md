@@ -45,7 +45,10 @@ customers = []
 for row in rows:
     customers.append(row)
 print(customers[:5])
+return customers
 ```
+![@task1_output](assets/imgs/@task1_ouput.png)
+
 *Get Products*
 ```
 @task()
