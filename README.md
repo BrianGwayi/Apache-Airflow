@@ -24,7 +24,7 @@ tags=['Team A'], # to categorize and filter dags in UI
 )
 ```
 ### Defining Tasks
-### *Get Customers*
+*Get Customers*
 ```
 @task()
 def get_customers():
@@ -45,7 +45,7 @@ customers = []
 for row in rows:
     customers.append(row)
 ```
-### *Get Products*
+*Get Products*
 ```
 @task()
 def get_products():
