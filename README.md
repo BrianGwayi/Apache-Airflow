@@ -29,13 +29,19 @@ tags=['Team A'], # to categorize and filter dags in UI
 @task()
 def get_customers():
 
-# Establishing connection
+# Establishing connection - postgreSQL[Source]
 conn = psycopg2.connect(database = "adventure_works", 
                         user = "postgres", 
                         host= 'localhost',
                         password = "p@ssword",
                         port = 5432)
 cursor = conn.cursor()
+
+## Print PostgreSQL details
+print("PostgreSQL server information")
+print(conn.get_dsn_parameters(), "\n")
+
+# Execute SQL Statement
 cursor.execute("""SELECT * FROM customer;""")
 rows = cursor.fetchall()
 conn.commit()
